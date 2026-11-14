@@ -45,9 +45,9 @@ gemini extensions install https://github.com/Rqeim/rqeim-cloud-mcp
 
 ### ChatGPT and Claude (web, desktop, mobile)
 
-Add a connector with the URL `https://cloud.rqeim.com/mcp?surface=directory` and sign in when asked.
-The `surface=directory` flag lists every tool by name, which is what a public directory reviews; the
-plain `/mcp` keeps the short list and its search for agents.
+Add a connector with the URL `https://cloud.rqeim.com/mcp/directory` and sign in when asked.
+`/mcp/directory` lists every tool by name, which is what a public directory reviews; the plain `/mcp`
+keeps the short list and its search for agents. Each door has its own OAuth `resource`.
 
 ### Codex and other MCP clients
 
