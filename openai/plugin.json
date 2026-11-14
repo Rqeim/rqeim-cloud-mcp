@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rqeim-cloud",
+  "version": "1.0.0",
+  "description": "Manage the applications on your Rqeim Cloud account: environments, previews, logs, domains, health and backups.",
+  "author": {
+    "name": "Rqeim",
+    "email": "support@rqeim.com",
+    "url": "https://rqeim.com"
+  },
+  "homepage": "https://github.com/Rqeim/rqeim-cloud-mcp",
+  "repository": "https://github.com/Rqeim/rqeim-cloud-mcp",
+  "keywords": ["deploy", "docker", "hosting", "logs", "environments"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Rqeim Cloud",
+        "shortDescription": "Deploy and manage your apps",
+        "longDescription": "Rqeim Cloud runs Docker applications from a Git repository. This plugin connects an assistant to a Rqeim Cloud account so it can read what is deployed, change code in a sandboxed copy of a project, preview it, and publish it after the person agrees.\n\nIt also reads what is wrong: failed deploys, machines that do not start, logs, disk pressure, stale backups and broken addresses.",
+        "developerName": "Rqeim",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://rqeim.com",
+        "privacyPolicyURL": "https://rqeim.com/privacy",
+        "termsOfServiceURL": "https://rqeim.com/terms",
+        "defaultPrompt": [
+          "What is broken in my Rqeim Cloud projects?",
+          "Deploy this change to my app on Rqeim Cloud",
+          "Read the last deploy logs for my project"
+        ],
+        "brandColor": "#0F766E",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

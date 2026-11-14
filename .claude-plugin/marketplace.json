@@ -1,0 +1,17 @@
+{
+  "name": "rqeim",
+  "owner": {
+    "name": "Rqeim",
+    "url": "https://rqeim.com"
+  },
+  "plugins": [
+    {
+      "name": "rqeim-cloud",
+      "source": "./plugins/rqeim-cloud",
+      "description": "Manage the applications on your Rqeim Cloud account: environments, previews, logs, domains, health and backups.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/Rqeim/rqeim-cloud-mcp",
+      "category": "development"
+    }
+  ]
+}

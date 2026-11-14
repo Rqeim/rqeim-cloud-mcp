@@ -1,0 +1,12 @@
+{
+  "name": "rqeim-cloud",
+  "version": "1.0.0",
+  "description": "Create, deploy and diagnose the applications on your Rqeim Cloud account: environments, previews, logs, domains, health and backups.",
+  "mcpServers": {
+    "rqeim-cloud": {
+      "httpUrl": "https://cloud.rqeim.com/mcp",
+      "description": "Rqeim Cloud"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

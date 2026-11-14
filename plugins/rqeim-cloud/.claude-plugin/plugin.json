@@ -1,0 +1,16 @@
+{
+  "name": "rqeim-cloud",
+  "displayName": "Rqeim Cloud",
+  "version": "1.0.0",
+  "description": "Manage the applications on your Rqeim Cloud account: environments, previews, logs, domains, health and backups.",
+  "author": {
+    "name": "Rqeim",
+    "email": "support@rqeim.com",
+    "url": "https://rqeim.com"
+  },
+  "homepage": "https://github.com/Rqeim/rqeim-cloud-mcp",
+  "repository": "https://github.com/Rqeim/rqeim-cloud-mcp",
+  "keywords": ["deploy", "docker", "hosting", "logs", "environments"],
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/"
+}

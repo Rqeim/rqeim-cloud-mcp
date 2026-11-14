@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rqeim-cloud": {
+      "type": "http",
+      "url": "https://cloud.rqeim.com/mcp"
+    }
+  }
+}

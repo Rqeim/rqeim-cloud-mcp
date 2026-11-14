@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.rqeim/cloud",
+  "title": "Rqeim Cloud",
+  "description": "Create, deploy and diagnose the applications on a Rqeim Cloud account: environments, previews, logs, domains, health and backups.",
+  "version": "1.0.0",
+  "websiteUrl": "https://cloud.rqeim.com",
+  "repository": {
+    "url": "https://github.com/Rqeim/rqeim-cloud-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://cloud.rqeim.com/mcp"
+    }
+  ]
+}
