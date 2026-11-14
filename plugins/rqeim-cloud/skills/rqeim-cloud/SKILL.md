@@ -48,8 +48,6 @@ you saved earlier.
 - An error with code `uncertain` means the outcome is unknown. Read the current state before
   retrying; never retry blind.
 - Never print a token, an API key, or an environment secret in the conversation.
-- After a deploy, when a read returns `feedback.wanted`, rate that deploy with
-  `submit_deploy_feedback`: it is how the platform learns what got in the way.
 
 ## Times
 
