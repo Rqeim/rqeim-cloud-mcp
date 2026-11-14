@@ -1,5 +1,8 @@
 # Rqeim Cloud MCP
 
+[![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](https://kiro.dev/launch/mcp/add?name=Rqeim%20Cloud&config=%7B%22url%22%3A%22https%3A//cloud.rqeim.com/mcp%22%2C%22disabled%22%3Afalse%2C%22autoApprove%22%3A%5B%5D%7D)
+
+
 Connect an AI agent to [Rqeim Cloud](https://cloud.rqeim.com) and it can create, deploy, inspect and
 diagnose the applications on your account: environments, previews, logs, domains, health and backups.
 

@@ -1,0 +1,165 @@
+{
+  "name": "Rqeim Cloud \u2014 what is broken right now",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "1a2b3c4d-0001-4000-8000-000000000001",
+      "name": "Every 6 hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://cloud.rqeim.com/api/v1/health",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "1a2b3c4d-0002-4000-8000-000000000002",
+      "name": "Rqeim Cloud health",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Header Auth credential: Name = Authorization, Value = Bearer <your Rqeim Cloud API token>."
+    },
+    {
+      "parameters": {
+        "jsCode": "// The API answers { data: { problems: [...] } }; older answers carry the payload directly.\nconst body = $input.first().json.data ?? $input.first().json\nconst problems = Array.isArray(body.problems) ? body.problems : []\nconst lines = problems.map((p) => {\n  const where = [p.project, p.environment].filter(Boolean).join(' / ')\n  const what = p.detail ? ` (${p.detail})` : ''\n  return `- ${p.kind}${where ? ` ${where}` : ''}${what}`\n})\nreturn [{\n  json: {\n    count: problems.length,\n    text: problems.length\n      ? `Rqeim Cloud: ${problems.length} problem(s)\\n${lines.join('\\n')}`\n      : 'Rqeim Cloud: everything is healthy.',\n  },\n}]"
+      },
+      "id": "1a2b3c4d-0003-4000-8000-000000000003",
+      "name": "Build the message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "cond-1",
+              "leftValue": "={{ $json.count }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1a2b3c4d-0004-4000-8000-000000000004",
+      "name": "Anything broken?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.RQEIM_ALERT_WEBHOOK }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: $json.text }) }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "1a2b3c4d-0005-4000-8000-000000000005",
+      "name": "Tell me",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        0
+      ],
+      "notes": "Any endpoint that takes { \"text\": ... }: Slack, Discord, Google Chat, or your own server."
+    }
+  ],
+  "connections": {
+    "Every 6 hours": {
+      "main": [
+        [
+          {
+            "node": "Rqeim Cloud health",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rqeim Cloud health": {
+      "main": [
+        [
+          {
+            "node": "Build the message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build the message": {
+      "main": [
+        [
+          {
+            "node": "Anything broken?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anything broken?": {
+      "main": [
+        [
+          {
+            "node": "Tell me",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
