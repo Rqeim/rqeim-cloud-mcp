@@ -11,6 +11,7 @@ trap 'rm -rf "$stage"' EXIT
 
 cp "$root/openai/plugin.json" "$stage/plugin.json"
 cp -R "$root/openai/assets" "$stage/assets"
+rm -f "$stage/assets/README.md"
 mkdir -p "$stage/skills"
 cp -R "$root/plugins/rqeim-cloud/skills/." "$stage/skills/"
 

@@ -1,7 +1,7 @@
 # Rqeim Cloud MCP — privacy policy
 
-The canonical, published version of this policy is at `https://rqeim.com/privacy`. Effective from the
-date it is published there.
+The canonical, published version of this policy is at `https://cloud.rqeim.com/privacy` (Arabic and
+English on one page), live since 14 November 2026.
 
 This policy covers the Rqeim Cloud MCP server at `https://cloud.rqeim.com/mcp`, which lets an AI
 assistant (for example ChatGPT, Claude, Gemini CLI, Claude Code, Codex) act on a Rqeim Cloud account

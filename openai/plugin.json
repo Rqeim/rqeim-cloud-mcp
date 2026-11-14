@@ -10,7 +10,13 @@
   },
   "homepage": "https://github.com/Rqeim/rqeim-cloud-mcp",
   "repository": "https://github.com/Rqeim/rqeim-cloud-mcp",
-  "keywords": ["deploy", "docker", "hosting", "logs", "environments"],
+  "keywords": [
+    "deploy",
+    "docker",
+    "hosting",
+    "logs",
+    "environments"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -19,10 +25,13 @@
         "longDescription": "Rqeim Cloud runs Docker applications from a Git repository. This plugin connects an assistant to a Rqeim Cloud account so it can read what is deployed, change code in a sandboxed copy of a project, preview it, and publish it after the person agrees.\n\nIt also reads what is wrong: failed deploys, machines that do not start, logs, disk pressure, stale backups and broken addresses.",
         "developerName": "Rqeim",
         "category": "Developer Tools",
-        "capabilities": ["Read", "Write"],
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
         "websiteURL": "https://rqeim.com",
-        "privacyPolicyURL": "https://rqeim.com/privacy",
-        "termsOfServiceURL": "https://rqeim.com/terms",
+        "privacyPolicyURL": "https://cloud.rqeim.com/privacy",
+        "termsOfServiceURL": "https://cloud.rqeim.com/terms",
         "defaultPrompt": [
           "What is broken in my Rqeim Cloud projects?",
           "Deploy this change to my app on Rqeim Cloud",

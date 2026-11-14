@@ -19,5 +19,5 @@
   ],
   "mcpServers": "./.mcp.json",
   "skills": "./skills/",
-  "privacyPolicyUrl": "https://rqeim.com/privacy"
+  "privacyPolicyUrl": "https://cloud.rqeim.com/privacy"
 }
