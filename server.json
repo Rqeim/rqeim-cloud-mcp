@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.rqeim/cloud",
   "title": "Rqeim Cloud",
-  "description": "Create, deploy and diagnose the applications on a Rqeim Cloud account: environments, previews, logs, domains, health and backups.",
+  "description": "Deploy, preview and diagnose the apps on your Rqeim Cloud account.",
   "version": "1.0.0",
   "websiteUrl": "https://cloud.rqeim.com",
   "repository": {

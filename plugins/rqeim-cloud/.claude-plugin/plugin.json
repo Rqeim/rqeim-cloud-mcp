@@ -10,7 +10,14 @@
   },
   "homepage": "https://github.com/Rqeim/rqeim-cloud-mcp",
   "repository": "https://github.com/Rqeim/rqeim-cloud-mcp",
-  "keywords": ["deploy", "docker", "hosting", "logs", "environments"],
+  "keywords": [
+    "deploy",
+    "docker",
+    "hosting",
+    "logs",
+    "environments"
+  ],
   "mcpServers": "./.mcp.json",
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "privacyPolicyUrl": "https://rqeim.com/privacy"
 }
