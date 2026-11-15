@@ -9,7 +9,7 @@
       "name": "rqeim-cloud",
       "source": "./plugins/rqeim-cloud",
       "description": "Manage the applications on your Rqeim Cloud account: environments, previews, logs, domains, health and backups.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "homepage": "https://github.com/Rqeim/rqeim-cloud-mcp",
       "category": "development"
     }

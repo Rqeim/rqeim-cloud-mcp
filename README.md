@@ -31,7 +31,9 @@ its own to deploy, delete, or touch production.
 claude mcp add --transport http rqeim-cloud https://cloud.rqeim.com/mcp
 ```
 
-Or install the plugin, which also adds the workflow skill:
+Or install the plugin, which also adds the workflow skill and a stop check: while the last
+Rqeim answer still lists `pending` work (a running deploy, an unrated one), Claude Code is asked
+once to finish it before ending its turn.
 
 ```bash
 claude plugin marketplace add Rqeim/rqeim-cloud-mcp
